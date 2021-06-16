@@ -7,8 +7,9 @@ const ProductCategory = require("../models/productCategory");
 const Auth = require("../middleware/auth");
 const AuthUser = require("../middleware/user");
 const Admin = require("../middleware/admin");
+const Provider = require("../middleware/provider");
 
-router.post("/newCategory", Auth, AuthUser, Admin, async (req, res) => {
+router.post("/newCategory", Auth, AuthUser, Admin, Provider, async (req, res) => {
   if (!req.body.name || !req.body.description) {
     return res.status(400).send("Incomplete data");
   }
@@ -41,7 +42,7 @@ router.get("/listCategories/:name?", Auth, AuthUser, async (req, res) => {
   }
 });
 
-router.post("/editCategory", Auth, AuthUser, Admin, async (req, res) => {
+router.post("/editCategory", Auth, AuthUser, Admin, Provider, async (req, res) => {
   if (!req.body._id || !req.body.name || !req.body.description) {
     return res.status(400).send("Incomplete data");
   }
@@ -68,6 +69,7 @@ router.delete(
   Auth,
   AuthUser,
   Admin,
+  Provider,
   async (req, res) => {
     const idCheck = mongoose.Types.ObjectId.isValid(req.params._id);
     if (!idCheck) {

@@ -1,0 +1,730 @@
+{
+	"info": {
+		"_postman_id": "991280fe-8505-4538-a4c3-f52bc9890e07",
+		"name": "onlineShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Create role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"client\",\r\n    \"description\" : \"Shop client\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/role/roleRegistration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"role",
+								"roleRegistration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/role/listRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"role",
+								"listRoles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Karen Perez\",\r\n    \"email\": \"karen@mail.com\",\r\n    \"password\": \"1234\",\r\n    \"location\": \"Bogotá D.C\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/user/userRegistration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"user",
+								"userRegistration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/user/listUsers/ana",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								"ana"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Create admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MDZjMzZhNzQ2ODUzZGMwZWMwNmUiLCJlbWFpbCI6Imp1YW5AbWFpbC5jb20iLCJyb2xlSWQiOiI2MGM5MDE2MmZlNDkwNDQxNWNlYjllNzYiLCJpYXQiOjE2MjM3ODg2Mjd9.UnYPIdNFlhoczRL8enYbp6MHDGyS_qtAWaXsrPhU0kY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"admin\",\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"1234\",\r\n    \"location\":\"Bogotá D.C\",\r\n    \"roleId\": \"60c90124fe4904415ceb9e75\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/user/adminRegistration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"user",
+								"adminRegistration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60c905876a746853dc0ec06d\",\r\n    \"fullName\": \"Ana Romero\",\r\n    \"email\": \"ana@mail.com\",\r\n    \"password\": \"1234\",\r\n    \"location\": \"Cartagena\",\r\n    \"status\": true,\r\n    \"roleId\": \"60c9115570ee1a536c99152e\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/user/updateUser/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"user",
+								"updateUser",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Merchandise",
+			"item": [
+				{
+					"name": "Create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"empty\",\r\n    \"description\": \"first category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/productCategory/newCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"productCategory",
+								"newCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/productCategory/listCategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"productCategory",
+								"listCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60c9402186ef8e0ec0652000\",\r\n    \"name\": \"computer accesories\",\r\n    \"description\": \"accesories to make better the experience with your computer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/productCategory/editCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"productCategory",
+								"editCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/productCategory/deleteCategory/60c93c1240a17d48cc0ca6dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"productCategory",
+								"deleteCategory",
+								"60c93c1240a17d48cc0ca6dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzODEwMjM3fQ.wYP0dYahv2Mr46hPqWBSgvB1mrv7rr24DuLUHOmO72g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "charger",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "$100.000",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "charger type: port C",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/maria.a.barrios/OneDrive - Accenture/Pictures/modelo.png"
+								},
+								{
+									"key": "categoryId",
+									"value": "60c93bbf40a17d48cc0ca6dc",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/product/newProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"product",
+								"newProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/product/listProducts/charger",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"product",
+								"listProducts",
+								"charger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzODEwMjM3fQ.wYP0dYahv2Mr46hPqWBSgvB1mrv7rr24DuLUHOmO72g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60c959615b263137ac195048\",\r\n    \"categoryId\": \"60c9402186ef8e0ec0652000\",\r\n    \"name\": \"charger\",\r\n    \"price\": \"$110.000\",\r\n    \"description\": \"charger type: port C\",\r\n    \"available\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/product/editProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"product",
+								"editProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/sale/deleteSale/60c96e5d2284083330ce2d7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"sale",
+								"deleteSale",
+								"60c96e5d2284083330ce2d7f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale",
+			"item": [
+				{
+					"name": "Register sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzODEwMjM3fQ.wYP0dYahv2Mr46hPqWBSgvB1mrv7rr24DuLUHOmO72g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"60c959185b263137ac195047\",\r\n    \"employeeId\": \"60c906c36a746853dc0ec06e\",\r\n    \"clientId\": \"60c968832f73c11764ea53e9\",\r\n    \"price\":\"$100.000\",\r\n    \"paymentMethod\": \"card\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/sale/newSale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"sale",
+								"newSale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzODEwMjM3fQ.wYP0dYahv2Mr46hPqWBSgvB1mrv7rr24DuLUHOmO72g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/sale/listSale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"sale",
+								"listSale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzODEwMjM3fQ.wYP0dYahv2Mr46hPqWBSgvB1mrv7rr24DuLUHOmO72g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60c96e5d2284083330ce2d7f\",\r\n    \"productId\": \"60c959185b263137ac195047\",\r\n    \"employeeId\": \"60c906c36a746853dc0ec06e\",\r\n    \"clientId\": \"60c968832f73c11764ea53e9\",\r\n    \"price\": \"$100.000\",\r\n    \"paymentMethod\": \"cash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/api/sale/editSale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"sale",
+								"editSale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM5MGU4ZjcwZWUxYTUzNmM5OTE1MmMiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwicm9sZUlkIjoiNjBjOTAxMjRmZTQ5MDQ0MTVjZWI5ZTc1IiwiaWF0IjoxNjIzNzg5NDEyfQ.00EVOK61AJtSbSDcMs-8_NB7Offf8A2BtZ3FBZgaBxU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/sale/deleteSale/60c96e5d2284083330ce2d7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"sale",
+								"deleteSale",
+								"60c96e5d2284083330ce2d7f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
